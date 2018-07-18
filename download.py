@@ -117,10 +117,10 @@ def maybe_download_and_extract(url, download_dir):
 
         if file_path.endswith(".zip"):
             # Unpack the zip-file.
-            zipfile.ZipFile(file=file_path, mode="r").extractall(download_dir)
+            zipfile.ZipFile(file=file_path, mode="r",encoding="utf8").extractall(download_dir)
         elif file_path.endswith((".tar.gz", ".tgz")):
             # Unpack the tar-ball.
-            tarfile.open(name=file_path, mode="r:gz").extractall(download_dir)
+            tarfile.open(name=file_path, mode="r:gz",encoding="utf8").extractall(download_dir)
 
         print("Done.")
     else:
